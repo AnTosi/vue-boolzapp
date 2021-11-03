@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Boolzapp</title>
 </head>
-<body>
+<body class="debug">
 
 
     <!-- background colors -->
@@ -70,7 +70,7 @@
 
         <!-- window right -->
 
-        <div class="window_right col-8 p-0">
+        <div class="window_right col-8 p-0 position-relative">
             <div class="head p-3">
                 <div class="activeFriend d-flex col-6">
                         <img class="avatar" v-bind:src=" `../img/avatar` + contacts[counter].avatar + `.jpg`" alt="">
@@ -84,16 +84,26 @@
                         </div>
                 </div>
 
-                    <div class="d-flex col-6 align-items-center justify-content-end">
-                        <i class="fas fa-search"></i>
-                        <i class="fas fa-paperclip"></i>
-                        <i class="fas fa-ellipsis-v"></i>
-                    </div>
+                <div class="d-flex col-6 align-items-center justify-content-end">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
+            </div>
+
+            <div class="main_chat px-4 bg_pattern">
+
+            </div>
+
+            <div class="chat_controller d-flex justify-content-around align-items-center">
+                <i class="far fa-smile"></i>
+                <input class="my-2 px-3 col-10" type="text" name="chatMessage" id="chatMessage" placeholder="Scrivi un messaggio">
+                <i class="fas fa-microphone"></i>
             </div>
         </div>
 
         <!-- /window right -->
+
     </div>
 
     <!-- /main window -->

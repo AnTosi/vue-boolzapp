@@ -100,3 +100,34 @@ p.message_preview {
 .small_font {
     font-size: 0.75rem;
 }
+
+.bg_pattern {
+    background-image: url(../backgroundpattern/mine.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main_chat {
+    height: calc(100% - 92px);
+}
+
+.chat_controller {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #F3EEEA;
+    width: 100%;
+}
+
+.chat_controller i {
+    color: grey;
+    font-size: 1.5rem;
+}
+
+.chat_controller input {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border: none;
+    border-radius: 5px;
+}

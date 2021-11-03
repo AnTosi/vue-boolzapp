@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bootstrap.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Boolzapp</title>
@@ -41,9 +41,10 @@
                 <i class="fas fa-search"></i><input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
 
-            <div class="friend" v-for="(contact, index) in contacts" >
-                <img class="avatar" v-bind:src=" `../img/avatar` + contacts[index].avatar " alt="">
-                <p>{{contact[index]avatar}}</p>
+            <div class="friend" v-for="contact in contacts" >
+                <!-- SONO BLOCCATO DA UN'ORA PERCHÉ NON AGGIUNGEVO JPG ALLA FINE DEL PERCORSOOOOOOO -->
+                <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
+                <p></p>
             </div>
         </div>
 
@@ -55,7 +56,7 @@
 
     </div>
 
-    <script src="./assets/js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="./assets/js/main.js"></script>
 </body>
 </html>

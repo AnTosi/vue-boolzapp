@@ -72,10 +72,12 @@ span.bell_container {
 .search_bar input {
     border: none;
     width: 90%;
+    border-radius: 5px;
 }
 
 .friend {
     background-color: white;
+    border-bottom: 1px solid #FAFAFA;
 }
 
 .active.friend {

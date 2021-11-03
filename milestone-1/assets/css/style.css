@@ -39,7 +39,7 @@ p {
     margin-bottom: 0;
 }
 
-.head i {
+.head i, .window_left i{
     color: #B1B1B1;
     margin: 0 0.75rem 0 0.75rem;
     font-size: 1.5rem;
@@ -52,8 +52,8 @@ p {
 span.bell_container {
     background-color: white;
     color: #8EDAFC;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
     position: relative;
 }
@@ -130,4 +130,8 @@ p.message_preview {
     padding-bottom: 0.75rem;
     border: none;
     border-radius: 5px;
+}
+
+.search_bar {
+    background-color: #FAFAFA;
 }

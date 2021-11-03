@@ -10,12 +10,24 @@
     <title>Boolzapp</title>
 </head>
 <body>
+
+
+    <!-- background colors -->
+
     <div class="green_background"></div>
     <div class="grey_background"></div>
 
+    <!-- /background colors -->
+
+
+    <!-- main window -->
+
     <div class="window_container ml-auto mr-auto my-3 d-flex" id="root">
-        <div class="window_left col-4">
-            <div class="head d-flex py-3">
+
+        <!-- window left -->
+
+        <div class="window_left col-4 p-0">
+            <div class="head d-flex p-3">
                 <div class="me d-flex col-6 align-items-center">
                     <img class = "avatar" src="../img/avatar_io.jpg" alt="">
                     <p class="mx-2 user_name font-weight-bold">Nome Utente</p>
@@ -27,7 +39,7 @@
                 </div>
             </div>
 
-            <div class="desktop_notification lightblue_bg d-flex align-items-center p-3">
+            <div class="desktop_notification lightblue_bg d-flex align-items-center px-5 py-3">
                 <span class="bell_container mr-3">
                     <i class="fas fa-bell-slash"></i>
                 </span>
@@ -46,21 +58,45 @@
                 <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
                 <div class="chat_preview py-2 px-3">
                     <p class="font-weight-bold">{{contact.name}}</p>
-                    <p class="message_preview">{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...</p>
+                    <p class="message_preview small_font">{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...</p>
                 </div>
-                <div class="date">
+                <div class="date small_font">
                     {{contact.messages[lastOfArray(contact.messages)].date}}
                 </div>
             </div>
         </div>
 
-        <div class="window_right">
-            <div class="head">
+        <!-- /window left -->
 
+        <!-- window right -->
+
+        <div class="window_right col-8 p-0">
+            <div class="head p-3">
+                <div class="activeFriend d-flex col-6">
+                        <img class="avatar" v-bind:src=" `../img/avatar` + contacts[counter].avatar + `.jpg`" alt="">
+                        <div class="active_friend_info mx-3 col-8">
+                            <p class="font-weight-bold">
+                                {{contacts[counter].name}}
+                            </p>
+                            <p class="small_font pr-4">
+                                Ultimo accesso oggi alle {{contacts[counter].messages[lastOfArray(contacts[counter].messages)].date}}
+                            </p>
+                        </div>
+                </div>
+
+                    <div class="d-flex col-6 align-items-center justify-content-end">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                </div>
             </div>
         </div>
 
+        <!-- /window right -->
     </div>
+
+    <!-- /main window -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script src="./assets/js/main.js"></script>

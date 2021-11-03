@@ -7,6 +7,9 @@ const app = new Vue ({
 el: "#root",
 
 data: {
+
+    counter: 0,
+    
     contacts: [
         {
         name: 'Michele',

@@ -72,3 +72,24 @@ span.bell_container {
     border: none;
     width: 90%;
 }
+
+.friend {
+    background-color: white;
+}
+
+.active.friend {
+    background-color: #E9EBEB;
+}
+
+.date {
+    font-size: 0.7rem;
+    color: grey;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+p.message_preview {
+    font-size: 0.7rem;
+    color: grey;
+}

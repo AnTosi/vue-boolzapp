@@ -15,10 +15,10 @@
 
     <div class="window_container m-auto my-3 d-flex" id="root">
         <div class="window_left col-4">
-            <div class="head d-flex p-3">
+            <div class="head d-flex py-3">
                 <div class="me d-flex col-6 align-items-center">
                     <img class = "avatar" src="../img/avatar_io.jpg" alt="">
-                    <p class="mx-2 user_name">Nome Utente</p>
+                    <p class="mx-2 user_name font-weight-bold">Nome Utente</p>
                 </div>
                 <div class="d-flex col-6 align-items-center justify-content-end">
                     <i class="fas fa-circle-notch"></i>
@@ -27,12 +27,12 @@
                 </div>
             </div>
 
-            <div class="desktop_notification lightblue_bg d-flex align-items-center justify-content-center py-3">
-                <span class="bell_container">
+            <div class="desktop_notification lightblue_bg d-flex align-items-center p-3">
+                <span class="bell_container mr-3">
                     <i class="fas fa-bell-slash"></i>
                 </span>
-                <div class="mx-3">
-                    <p>Ricevi notifiche di nuovi messaggi</p>
+                <div>
+                    <p class="font-weight-bold">Ricevi notifiche di nuovi messaggi</p>
                     <a href="#">Attiva notifiche desktop</a>
                 </div>
             </div>
@@ -41,10 +41,14 @@
                 <i class="fas fa-search"></i><input type="text" placeholder="Cerca o inizia una nuova chat">
             </div>
 
-            <div class="friend" v-for="contact in contacts" >
+            <div class="friend py-2 px-3 d-flex position-relative" v-for="contact in contacts" >
                 <!-- SONO BLOCCATO DA UN'ORA PERCHÉ NON AGGIUNGEVO JPG ALLA FINE DEL PERCORSOOOOOOO -->
                 <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
-                <p></p>
+                <div class="chat_preview py-2 px-3">
+                    <p class="font-weight-bold">{{contact.name}}</p>
+                    <p class="message_preview">lastmessagepreview</p>
+                </div>
+                <div class="date">lastmessagedate</div>
             </div>
         </div>
 

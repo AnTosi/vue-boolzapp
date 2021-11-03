@@ -3,6 +3,7 @@ Vue.config.devtools = true;
 
 const app = new Vue ({
 
+
 el: "#root",
 
 data: {
@@ -92,6 +93,15 @@ data: {
         },
         ]
 
-}
+},
+
+    methods: {
+        lastOfArray(array){
+            let lastElementIndex = array.length - 1;
+            console.log(lastElementIndex);
+            return lastElementIndex
+            
+        }
+    }
 
 })

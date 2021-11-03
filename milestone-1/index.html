@@ -48,7 +48,7 @@
                     <p class="font-weight-bold">{{contact.name}}</p>
                     <p class="message_preview">lastmessagepreview</p>
                 </div>
-                <div class="date">lastmessagedate</div>
+                <div class="date">{{contact.messages[lastOfArray(contact.messages)].date}}</div>
             </div>
         </div>
 

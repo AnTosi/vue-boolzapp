@@ -46,9 +46,11 @@
                 <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
                 <div class="chat_preview py-2 px-3">
                     <p class="font-weight-bold">{{contact.name}}</p>
-                    <p class="message_preview">lastmessagepreview</p>
+                    <p class="message_preview">{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...</p>
                 </div>
-                <div class="date">{{contact.messages[lastOfArray(contact.messages)].date}}</div>
+                <div class="date">
+                    {{contact.messages[lastOfArray(contact.messages)].date}}
+                </div>
             </div>
         </div>
 

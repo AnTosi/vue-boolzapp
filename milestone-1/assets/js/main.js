@@ -101,7 +101,12 @@ data: {
             console.log(lastElementIndex);
             return lastElementIndex
             
+        },
+
+        previewCharacters(string){
+            let preview = string.slice(0,30);
+            return preview
         }
-    }
+    },
 
 })

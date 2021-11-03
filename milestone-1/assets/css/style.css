@@ -39,7 +39,7 @@ p {
     margin-bottom: 0;
 }
 
-.head i {
+.window_left i {
     color: #B1B1B1;
     margin: 0 0.75rem 0 0.75rem;
 }
@@ -57,10 +57,18 @@ span.bell_container {
     position: relative;
 }
 
-.fa-bell-slash {
+.window_left .desktop_notification i.fa-bell-slash {
     position: absolute;
     top: 50%;
     left: 50%;
     transform:translate(-50%, -50%);
     font-size: 1.5rem;
+    color: #8EDAFC;
+    margin: 0;
+}
+
+
+.search_bar input {
+    border: none;
+    width: 90%;
 }

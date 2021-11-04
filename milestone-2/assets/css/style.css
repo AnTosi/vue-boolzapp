@@ -1,7 +1,7 @@
 
 body {
     height: 100vh;
-    /* background-image: linear-gradient(to bottom), #009688; */
+    background-image: linear-gradient(to bottom), #009688;
 }
 
 .green_background {
@@ -141,8 +141,4 @@ p.message_preview {
 
 .search_bar {
     background-color: #FAFAFA;
-}
-
-.active {
-    background-color: grey;
 }

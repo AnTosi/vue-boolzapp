@@ -8,7 +8,7 @@ el: "#root",
 
 data: {
 
-    activeContact: 0,
+    counter: 0,
     
     contacts: [
         {

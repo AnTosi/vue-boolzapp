@@ -55,7 +55,7 @@
                 </div>
             </div>
 
-            <div class="friend py-3 px-3 d-flex position-relative" :class ="index == activeContact ? `active` : ``" v-for="(contact, index) in contacts" >
+            <div class="friend py-3 px-3 d-flex position-relative" v-for="contact in contacts" >
                 <!-- SONO BLOCCATO DA UN'ORA PERCHÉ NON AGGIUNGEVO JPG ALLA FINE DEL PERCORSOOOOOOO -->
                 <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
                 <div class="chat_preview py-2 px-3">
@@ -75,13 +75,13 @@
         <div class="window_right col-8 p-0 position-relative">
             <div class="head p-3">
                 <div class="activeFriend d-flex col-6">
-                        <img class="avatar" v-bind:src=" `../img/avatar` + contacts[activeContact].avatar + `.jpg`" alt="">
+                        <img class="avatar" v-bind:src=" `../img/avatar` + contacts[counter].avatar + `.jpg`" alt="">
                         <div class="active_friend_info mx-3 col-8">
                             <p class="font-weight-bold">
-                                {{contacts[activeContact].name}}
+                                {{contacts[counter].name}}
                             </p>
                             <p class="small_font pr-4">
-                                Ultimo accesso oggi alle {{contacts[activeContact].messages[lastOfArray(contacts[activeContact].messages)].date}}
+                                Ultimo accesso oggi alle {{contacts[counter].messages[lastOfArray(contacts[counter].messages)].date}}
                             </p>
                         </div>
                 </div>

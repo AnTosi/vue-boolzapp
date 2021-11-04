@@ -4,6 +4,9 @@ var writtenMessage;
 
 var contactsFilter;
 
+var filtered; 
+
+
 
 const app = new Vue ({
 
@@ -161,9 +164,16 @@ data: {
             
         },
 
-        filter(contactsFilter){
-            console.log(contactsFilter);
-        }
+        procFilter(contactsFilter, filtered){
+            filtered = contactsFilter;
+            console.log(filtered);
+        },
+
+        // filter(){
+        //     if (contact.name.includes(filtered)){
+        //          true;
+        //     }
+        // }
 
     },
 

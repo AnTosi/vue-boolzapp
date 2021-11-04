@@ -55,15 +55,17 @@
                 </div>
             </div>
 
-            <div class="friend py-3 px-3 d-flex position-relative" :class ="index == activeContact ? `active` : ``" v-for="(contact, index) in contacts" >
-                <!-- SONO BLOCCATO DA UN'ORA PERCHÉ NON AGGIUNGEVO JPG ALLA FINE DEL PERCORSOOOOOOO -->
-                <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
-                <div class="chat_preview py-2 px-3">
-                    <p class="font-weight-bold">{{contact.name}}</p>
-                    <p class="message_preview small_font">{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...</p>
-                </div>
-                <div class="date small_font">
-                    {{contact.messages[lastOfArray(contact.messages)].date}}
+            <div class="preview_container">
+                <div class="friend py-3 px-3 d-flex position-relative" :class ="index == activeContact ? `active` : ``" v-for="(contact, index) in contacts" @click = "selectThis(index)">
+                    <!-- SONO BLOCCATO DA UN'ORA PERCHÉ NON AGGIUNGEVO JPG ALLA FINE DEL PERCORSOOOOOOO -->
+                    <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
+                    <div class="chat_preview py-2 px-3">
+                        <p class="font-weight-bold">{{contact.name}}</p>
+                        <p class="message_preview small_font">{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...</p>
+                    </div>
+                    <div class="date small_font">
+                        {{contact.messages[lastOfArray(contact.messages)].date}}
+                    </div>
                 </div>
             </div>
         </div>

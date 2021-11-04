@@ -1,0 +1,168 @@
+
+body {
+    height: 100vh;
+    background-image: linear-gradient(to bottom), #009688;
+}
+
+.green_background {
+    background-color: #009688;
+    height: 108px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.grey_background {
+    background-color: #DADBD4;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+}
+
+img.avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.head {
+    display: flex;
+    background-color: #EAEAEA;
+    width: 100%;
+}
+
+.window_container {
+    width: 90%;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+.head i, .window_left i{
+    color: #B1B1B1;
+    margin: 0 0.75rem 0 0.75rem;
+    font-size: 1.5rem;
+}
+
+.lightblue_bg {
+    background-color: #8EDAFC;
+}
+
+span.bell_container {
+    background-color: white;
+    color: #8EDAFC;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+}
+
+.window_left .desktop_notification i.fa-bell-slash {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    font-size: 1.5rem;
+    color: #8EDAFC;
+    margin: 0;
+}
+
+
+.search_bar input {
+    border: none;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.friend {
+    background-color: white;
+    border-bottom: 1px solid #FAFAFA;
+}
+
+.active.friend {
+    background-color: #E9EBEB;
+}
+
+.date {
+    color: grey;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+p.message_preview {
+    color: grey;
+}
+
+.window_left {
+    border-right: 1px solid grey;
+}
+
+.small_font {
+    font-size: 0.75rem;
+}
+
+.bg_pattern {
+    background-image: url(../backgroundpattern/mine.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.main_chat {
+    height: calc(100% - 92px);
+}
+
+.chat_controller {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2;
+    background-color: #F3EEEA;
+    width: 100%;
+}
+
+.chat_controller i {
+    color: grey;
+    font-size: 1.5rem;
+}
+
+.chat_controller input {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.search_bar {
+    background-color: #FAFAFA;
+}
+
+.message.received {
+    background-color: white;
+    align-self: flex-start;
+}
+
+.message.sent {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.chat_message_date {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    color: grey;
+    font-size: 0.75rem;
+}
+
+.message {
+    min-width: 280px;
+    padding: 1rem 1rem 1.8rem 1rem;
+    border-radius: 1rem;
+}

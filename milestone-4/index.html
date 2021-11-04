@@ -49,21 +49,32 @@
                 </div>
             </div>
 
+
+            <!-- barra di ricerca -->
+
+
             <div class="search_bar  p-2 align-items-center">
                 <div class="d-flex align-items-center bg-white">
-                    <i class="fas fa-search"></i><input class="py-2" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <i class="fas fa-search"></i><input class="py-2" type="text" placeholder="Cerca o inizia una nuova chat" v-model="contactsFilter" @keyup.enter="filter(contactsFilter)">
                 </div>
             </div>
+
+            <!-- /barra di ricerca -->
+
             <div class="preview_container">
-                <div class="friend py-3 px-3 d-flex position-relative" :class ="index == activeContact ? `active` : ``" v-for="(contact, index) in contacts" @click = "selectThis(index)">
+                <div v-for="(contact, index) in contacts" @click = "selectThis(index)">
                     <!-- SONO BLOCCATO DA UN'ORA PERCHÉ NON AGGIUNGEVO JPG ALLA FINE DEL PERCORSOOOOOOO -->
-                    <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
-                    <div class="chat_preview py-2 px-3">
-                        <p class="font-weight-bold">{{contact.name}}</p>
-                        <p class="message_preview small_font">{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...</p>
-                    </div>
-                    <div class="date small_font">
-                        {{contact.messages[lastOfArray(contact.messages)].date}}
+                    
+                    <!-- aggiungo div per mettere v-if che non posso mettere insieme a v-for -->
+                    <div class="friend py-3 px-3 d-flex position-relative" :class ="index == activeContact ? `active` : ``" v-if="">
+                        <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
+                        <div class="chat_preview py-2 px-3">
+                            <p class="font-weight-bold">{{contact.name}}</p>
+                            <p class="message_preview small_font">{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...</p>
+                        </div>
+                        <div class="date small_font">
+                            {{contact.messages[lastOfArray(contact.messages)].date}}
+                        </div>
                     </div>
                 </div>
             </div>

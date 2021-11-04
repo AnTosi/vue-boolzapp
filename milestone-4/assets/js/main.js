@@ -2,6 +2,8 @@ Vue.config.devtools = true;
 
 var writtenMessage;
 
+var contactsFilter;
+
 
 const app = new Vue ({
 
@@ -148,12 +150,20 @@ data: {
             // }, 1000)
         },
 
+
+        /**
+         * this sets an automatic answer ("ok") after a 1 second delay with it's own date and time, it push it to the active message array (so that it's printed thanks to the v-for cycle)
+         */
         autoAnswer(){
             setTimeout(() => {
                 this.contacts[this.activeContact].messages.push({date: dayjs(new Date()).format(`DD/MM/YYYY HH:mm:ss`), text: `ok`, status: `received`});
             }, 1000);
             
         },
+
+        filter(contactsFilter){
+            console.log(contactsFilter);
+        }
 
     },
 

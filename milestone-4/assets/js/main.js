@@ -164,10 +164,10 @@ data: {
             
         },
 
-        procFilter(contactsFilter, filtered){
-            filtered = contactsFilter;
-            console.log(filtered);
-        },
+        // procFilter(contactsFilter, filtered){
+        //     filtered = contactsFilter;
+        //     console.log(filtered);
+        // },
 
         // filter(){
         //     if (contact.name.includes(filtered)){

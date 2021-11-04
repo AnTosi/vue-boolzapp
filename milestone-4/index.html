@@ -55,7 +55,7 @@
 
             <div class="search_bar  p-2 align-items-center">
                 <div class="d-flex align-items-center bg-white">
-                    <i class="fas fa-search"></i><input class="py-2" type="text" placeholder="Cerca o inizia una nuova chat" v-model="contactsFilter" @change="procFilter(contactsFilter, filtered)">
+                    <i class="fas fa-search"></i><input class="py-2" type="text" placeholder="Cerca o inizia una nuova chat" v-model="contactsFilter">
                 </div>
             </div>
 
@@ -66,7 +66,7 @@
                     <!-- SONO BLOCCATO DA UN'ORA PERCHÉ NON AGGIUNGEVO JPG ALLA FINE DEL PERCORSOOOOOOO -->
                     
                     <!-- aggiungo div per mettere v-if che non posso mettere insieme a v-for -->
-                    <div class="friend py-3 px-3 d-flex position-relative" :class ="index == activeContact ? `active` : ``" v-if="contact.name.includes(filtered)">
+                    <div class="friend py-3 px-3 d-flex position-relative" :class ="index == activeContact ? `active` : ``" v-if="contact.name.includes(contactsFilter)">
                         <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
                         <div class="chat_preview py-2 px-3">
                             <p class="font-weight-bold">{{contact.name}}</p>

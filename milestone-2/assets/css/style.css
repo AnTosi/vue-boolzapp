@@ -142,3 +142,27 @@ p.message_preview {
 .search_bar {
     background-color: #FAFAFA;
 }
+
+.message.received {
+    background-color: white;
+    align-self: flex-start;
+}
+
+.message.sent {
+    background-color: #D5F9BA;
+    align-self: flex-end;
+}
+
+.chat_message_date {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    color: grey;
+    font-size: 0.75rem;
+}
+
+.message {
+    min-width: 280px;
+    padding: 1rem 1rem 1.8rem 1rem;
+    border-radius: 1rem;
+}

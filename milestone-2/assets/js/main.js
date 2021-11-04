@@ -112,7 +112,7 @@ data: {
         },
 
         selectThis (index){
-            console.log(index);
+            this.activeContact = index;
         }
     },
 

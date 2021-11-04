@@ -101,6 +101,12 @@ data: {
 },
 
     methods: {
+
+        /**
+         * This function returns the index of the last element of an array without needing to know the length of the array itself
+         * @param {array} array this is the array whose last index is needed
+         * @returns the index of the last element of the array
+         */
         lastOfArray(array){
             let lastElementIndex = array.length - 1;
             console.log(lastElementIndex);
@@ -108,19 +114,48 @@ data: {
             
         },
 
+
+        /**
+         * This select the first 30 characters of a string, regardless of how long it is
+         * @param {string} string the string we need to cut
+         * @returns first 30 characters of the string
+         */
         previewCharacters(string){
             let preview = string.slice(0,30);
             return preview
         },
 
+
+        /**
+         * This change the "activeContact" parameter to the index of the item selected (in this case used @click)
+         * @param {number} index the index of the item
+         */
         selectThis (index){
             this.activeContact = index;
         },
 
+
+        /**
+         * This get the string and push it in the according array, then clear the string
+         * @param {string} writtenMessage 
+         */
         sendMessage (writtenMessage){
             this.contacts[this.activeContact].messages.push({date: `5asda 1233`, text: writtenMessage, status: `sent`});
-           this.writtenMessage = ``;
-        }
+            this.writtenMessage = ``;
+            // setTimeout(function()
+            // {
+            //     this.contacts[this.activeContact].messages.push({date: `5asda 1233`, text: ok, status: `received`});           
+            // }, 1000)
+        },
+
+        autoAnswer(){
+            this.contacts[this.activeContact].messages.push({date: `5asda 1233`, text: `ok`, status: `received`});
+        },
+
+        delayedAutoAnswer (){
+           let timer = setTimeout(autoAnswer, 1000);
+           console.log(timer);
+        },
     },
 
 })

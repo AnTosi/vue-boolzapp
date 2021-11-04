@@ -109,7 +109,7 @@
 
             <div class="chat_controller d-flex justify-content-around align-items-center">
                 <i class="far fa-smile"></i>
-                <input class="my-2 px-3 col-10" type="text" name="chatMessage" id="chatMessage" placeholder="Scrivi un messaggio" v-model="writtenMessage" @keyup.enter="sendMessage(writtenMessage)">
+                <input class="my-2 px-3 col-10" type="text" name="chatMessage" id="chatMessage" placeholder="Scrivi un messaggio" v-model="writtenMessage" @keyup.enter="sendMessage(writtenMessage), delayedAutoAnswer()">
                 <i class="fas fa-microphone"></i>
             </div>
 

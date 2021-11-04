@@ -109,7 +109,7 @@
 
             <div class="chat_controller d-flex justify-content-around align-items-center">
                 <i class="far fa-smile"></i>
-                <input class="my-2 px-3 col-10" type="text" name="chatMessage" id="chatMessage" placeholder="Scrivi un messaggio" v-model="writtenMessage" @keyup.enter="sendMessage(writtenMessage), delayedAutoAnswer()">
+                <input class="my-2 px-3 col-10" type="text" name="chatMessage" id="chatMessage" placeholder="Scrivi un messaggio" v-model="writtenMessage" @keyup.enter="sendMessage(writtenMessage), autoAnswer()">
                 <i class="fas fa-microphone"></i>
             </div>
 
@@ -125,5 +125,6 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
     <script src="./assets/js/main.js"></script>
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 </body>
 </html>

@@ -140,7 +140,7 @@ data: {
          * @param {string} writtenMessage 
          */
         sendMessage (writtenMessage){
-            this.contacts[this.activeContact].messages.push({date: `5asda 1233`, text: writtenMessage, status: `sent`});
+            this.contacts[this.activeContact].messages.push({date: dayjs(new Date()), text: writtenMessage, status: `sent`});
             this.writtenMessage = ``;
             // setTimeout(function()
             // {
@@ -149,13 +149,12 @@ data: {
         },
 
         autoAnswer(){
-            this.contacts[this.activeContact].messages.push({date: `5asda 1233`, text: `ok`, status: `received`});
+            setTimeout(() => {
+                this.contacts[this.activeContact].messages.push({date: dayjs(new Date()), text: `ok`, status: `received`});
+            }, 1000);
+            
         },
 
-        delayedAutoAnswer (){
-           let timer = setTimeout(autoAnswer, 1000);
-           console.log(timer);
-        },
     },
 
 })

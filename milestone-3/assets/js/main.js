@@ -1,5 +1,7 @@
 Vue.config.devtools = true;
 
+var writtenMessage;
+
 
 const app = new Vue ({
 
@@ -113,6 +115,11 @@ data: {
 
         selectThis (index){
             this.activeContact = index;
+        },
+
+        sendMessage (writtenMessage){
+            this.contacts[this.activeContact].messages.push({date: `5asda 1233`, text: writtenMessage, status: `sent`});
+           this.writtenMessage = ``;
         }
     },
 

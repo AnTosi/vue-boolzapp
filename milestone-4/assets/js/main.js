@@ -2,7 +2,7 @@ Vue.config.devtools = true;
 
 var writtenMessage;
 
-var contactsFilter;
+// var contactsFilter;
 
 var filtered; 
 
@@ -16,6 +16,8 @@ el: "#root",
 data: {
 
     activeContact: 0,
+
+    contactsFilter: "",
     
     contacts: [
         {

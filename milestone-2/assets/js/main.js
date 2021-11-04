@@ -8,7 +8,7 @@ el: "#root",
 
 data: {
 
-    counter: 0,
+    activeContact: 0,
     
     contacts: [
         {
@@ -109,6 +109,10 @@ data: {
         previewCharacters(string){
             let preview = string.slice(0,30);
             return preview
+        },
+
+        selectThis (index){
+            console.log(index);
         }
     },
 

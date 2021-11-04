@@ -1,7 +1,6 @@
 
 body {
     height: 100vh;
-    background-image: linear-gradient(to bottom), #009688;
 }
 
 .green_background {
@@ -38,6 +37,7 @@ img.avatar {
 
 .window_container {
     width: 90%;
+    height: 90vh;
 }
 
 p {
@@ -102,6 +102,8 @@ p.message_preview {
 
 .window_left {
     border-right: 1px solid grey;
+    overflow: hidden;
+    height: 100%;
 }
 
 .small_font {
@@ -116,6 +118,7 @@ p.message_preview {
 
 .main_chat {
     height: calc(100% - 92px);
+    overflow: scroll;
 }
 
 .chat_controller {
@@ -165,4 +168,8 @@ p.message_preview {
     min-width: 280px;
     padding: 1rem 1rem 1.8rem 1rem;
     border-radius: 1rem;
+}
+
+.preview_container {
+    overflow: scroll;
 }

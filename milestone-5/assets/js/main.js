@@ -8,6 +8,8 @@ var writtenMessage;
 
 var index;
 
+var textPreview;
+
 
 
 const app = new Vue ({
@@ -121,12 +123,31 @@ data: {
          * @returns the index of the last element of the array
          */
         lastOfArray(array){
-            let lastElementIndex = array.length - 1;
-            console.log(lastElementIndex);
-            return lastElementIndex
+            // if (array.lenght > 0) {
+
+                // I need this if because if I cancel all elements from the array it returns an error
+                let lastElementIndex = array.length - 1;
+                // console.log(lastElementIndex);
+                return lastElementIndex
+            // } else {
+            //     let lastElementIndex = -1;
+            //     return lastElementIndex
+            // }
+
+            //currently commented the if part because it crashes a lot of stuff
             
         },
 
+        // textPreview (lastElementIndex){
+        //     if (lastElementIndex == -1) {
+        //         return ""
+        //     } else {
+        //         return "{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}..."
+        //     }
+
+        // },
+
+        // {{contact.messages[lastOfArray(contact.messages)].date}}
 
         /**
          * This select the first 30 characters of a string, regardless of how long it is
@@ -179,7 +200,14 @@ data: {
             } else {
                 document.getElementById(`dropdown${index}`).classList.add("show")
             }
+        },
+
+        deleteMessage(index){
+            console.log(index);
+            this.contacts[this.activeContact].messages.splice(index, 1);
+
         }
+
 
         // toggleOption (){
         //     if (this.classList.contains("option")){

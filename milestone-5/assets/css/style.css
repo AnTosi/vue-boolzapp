@@ -217,4 +217,11 @@ i.fa-chevron-down {
 
 .dropdown div:hover {
     background-color: rgba(128, 128, 128, 0.123);
-} 
+}
+
+.systemMessage {
+    align-self: center;
+    padding: 0.5rem 2rem 0.7rem 2rem;
+    background-color: rgba(128, 128, 128, 0.363);
+
+}

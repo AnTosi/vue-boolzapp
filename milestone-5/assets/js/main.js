@@ -179,17 +179,26 @@ data: {
 
 
         /**
-         * This get the string and push it in the according array, then clear the string
-         * @param {string} writtenMessage 
+         * This get the string (from the v-model) and push it in the according array, giving it a date and message type too. Then clear the string and deletes the system message if present
+         * @param {string} writtenMessage
+         * @param {number}  
          */
-        sendMessage (writtenMessage){
+        sendMessage (writtenMessage, activeContact){
             this.contacts[this.activeContact].messages.push({date: dayjs(new Date()).format(`DD/MM/YYYY HH:mm:ss`), text: writtenMessage, status: `sent`});
             this.writtenMessage = ``;
+            for (let i = 0; i < this.contacts[activeContact].messages.length; i++) {
+                const toDelete = this.contacts[activeContact].messages[i];
+                if (toDelete.status == "systemMessage"){
+                    this.contacts[activeContact].messages.splice(i,1);
+                }
+                
+            }
+                
+        },
             // setTimeout(function()
             // {
             //     this.contacts[this.activeContact].messages.push({date: `5asda 1233`, text: ok, status: `received`});           
             // }, 1000)
-        },
 
 
         /**
@@ -225,8 +234,8 @@ data: {
             if (!this.contacts[this.activeContact].messages.length) {
                 this.contacts[this.activeContact].messages.push({
                     date: '',
-                    text: `avvia una conversazione con questa persona`,
-                    status: 'sent'
+                    text: `Avvia una conversazione con questa persona`,
+                    status: 'systemMessage'
                 })
             }
 

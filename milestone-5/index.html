@@ -74,7 +74,7 @@
                                 {{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...
                             </p>
                         </div>
-                        <div class="date small_font" v-if="contacts[activeContact].messages.length">
+                        <div class="date small_font">
                             {{contact.messages[lastOfArray(contact.messages)].date}}
                         </div>
                     </div>
@@ -110,7 +110,7 @@
             <!-- main chat -->
             
             <div class="main_chat px-4 bg_pattern d-flex flex-column py-3 px-5">
-                <div class="message my-2 position-relative" v-bind:class="message.status == `received` ? `received` : `sent`" v-for="(message, index) in contacts[activeContact].messages">
+                <div class="message my-2 position-relative" v-bind:class="message.status" v-for="(message, index) in contacts[activeContact].messages">
                     <p>{{message.text}}</p>
                     <div class="dropdown_container">
                         <i class="fas fa-chevron-down" @click="toggleMenu(index)"></i>
@@ -131,7 +131,7 @@
 
             <div class="chat_controller d-flex justify-content-around align-items-center">
                 <i class="far fa-smile"></i>
-                <input class="my-2 px-3 col-10" type="text" name="chatMessage" id="chatMessage" placeholder="Scrivi un messaggio" v-model="writtenMessage" @keyup.enter="sendMessage(writtenMessage), autoAnswer()">
+                <input class="my-2 px-3 col-10" type="text" name="chatMessage" id="chatMessage" placeholder="Scrivi un messaggio" v-model="writtenMessage" @keyup.enter="sendMessage(writtenMessage, activeContact), autoAnswer()">
                 <i class="fas fa-microphone"></i>
             </div>
 

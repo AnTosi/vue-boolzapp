@@ -70,9 +70,11 @@
                         <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
                         <div class="chat_preview py-2 px-3">
                             <p class="font-weight-bold">{{contact.name}}</p>
-                            <p class="message_preview small_font">{{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...</p>
+                            <p v-if="contacts[activeContact].messages.length" class="message_preview small_font">
+                                {{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...
+                            </p>
                         </div>
-                        <div class="date small_font">
+                        <div v-if="contacts[activeContact].messages.length" class="date small_font">
                             {{contact.messages[lastOfArray(contact.messages)].date}}
                         </div>
                     </div>
@@ -92,7 +94,7 @@
                             <p class="font-weight-bold">
                                 {{contacts[activeContact].name}}
                             </p>
-                            <p class="small_font pr-4">
+                            <p v-if="contacts[activeContact].messages.length" class="small_font pr-4">
                                 Ultimo accesso oggi alle {{contacts[activeContact].messages[lastOfArray(contacts[activeContact].messages)].date}}
                             </p>
                         </div>
@@ -111,8 +113,8 @@
                 <div class="message my-2 position-relative" v-bind:class="message.status == `received` ? `received` : `sent`" v-for="(message, index) in contacts[activeContact].messages">
                     <p>{{message.text}}</p>
                     <div class="dropdown_container">
-                        <i class="fas fa-chevron-down" @click="openCloseMenu(index)"></i>
-                        <div class="dropdown" v-bind:id="`dropdown` + index">
+                        <i class="fas fa-chevron-down" @click="toggleMenu(index)"></i>
+                        <div class="dropdown" v-bind:class="{ show : dropdown.open && index == dropdown.index}" v-bind:id="`dropdown` + index">
                             <div>Message Info</div>
                             <div @click="deleteMessage(index)">Delete Message</div>
                         </div>

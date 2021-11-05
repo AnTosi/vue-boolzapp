@@ -23,7 +23,10 @@ data: {
 
     contactsFilter: "",
 
-    cancelOpen: true,
+    dropdown: {
+        open: false,
+        index: "",
+    },
 
     // chevron_index: `chevron + ${index}`,
     
@@ -123,16 +126,17 @@ data: {
          * @returns the index of the last element of the array
          */
         lastOfArray(array){
-            // if (array.lenght > 0) {
+            if (array) {
 
                 // I need this if because if I cancel all elements from the array it returns an error
                 let lastElementIndex = array.length - 1;
                 // console.log(lastElementIndex);
                 return lastElementIndex
-            // } else {
+            } else {
             //     let lastElementIndex = -1;
             //     return lastElementIndex
-            // }
+                return false;
+            }
 
             //currently commented the if part because it crashes a lot of stuff
             
@@ -166,6 +170,7 @@ data: {
          */
         selectThis (index){
             this.activeContact = index;
+            this.dropdown.open = false;
         },
 
 
@@ -193,13 +198,19 @@ data: {
             
         },
 
-        openCloseMenu (index){
-            // console.log(document.getElementById(`dropdown${index}`).classList);
-            if (document.getElementById(`dropdown${index}`).classList.contains("show")) {
-                document.getElementById(`dropdown${index}`).classList.remove("show")
-            } else {
-                document.getElementById(`dropdown${index}`).classList.add("show")
-            }
+        // openCloseMenu (index){
+        //     // console.log(document.getElementById(`dropdown${index}`).classList);
+        //     if (document.getElementById(`dropdown${index}`).classList.contains("show")) {
+        //         document.getElementById(`dropdown${index}`).classList.remove("show")
+        //     } else {
+        //         document.getElementById(`dropdown${index}`).classList.add("show")
+        //     }
+        // },
+
+        toggleMenu(index) {
+            this.dropdown.open = !this.dropdown.open;
+            this.dropdown.index = index;
+
         },
 
         deleteMessage(index){

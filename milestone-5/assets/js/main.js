@@ -10,6 +10,8 @@ var index;
 
 var textPreview;
 
+var debug = true;
+
 
 
 const app = new Vue ({
@@ -135,6 +137,7 @@ data: {
             } else {
             //     let lastElementIndex = -1;
             //     return lastElementIndex
+                
                 return false;
             }
 
@@ -169,6 +172,7 @@ data: {
          * @param {number} index the index of the item
          */
         selectThis (index){
+            debug = false;
             this.activeContact = index;
             this.dropdown.open = false;
         },
@@ -216,6 +220,16 @@ data: {
         deleteMessage(index){
             console.log(index);
             this.contacts[this.activeContact].messages.splice(index, 1);
+            this.dropdown.open = false;
+
+            if (!this.contacts[this.activeContact].messages.length) {
+                this.contacts[this.activeContact].messages.push({
+                    date: '',
+                    text: `avvia una conversazione con questa persona`,
+                    status: 'sent'
+                })
+            }
+
 
         }
 

@@ -68,13 +68,13 @@
                     <!-- aggiungo div per mettere v-if che non posso mettere insieme a v-for -->
                     <div class="friend py-3 px-3 d-flex position-relative" :class ="index == activeContact ? `active` : ``" v-if= "contact.name.toLowerCase().includes(contactsFilter.toLowerCase().trim())">
                         <img class="avatar" v-bind:src=" `../img/avatar` + contact.avatar + `.jpg`" alt="">
-                        <div class="chat_preview py-2 px-3">
+                        <div class="chat_preview py-2 px-3" >
                             <p class="font-weight-bold">{{contact.name}}</p>
-                            <p v-if="contacts[activeContact].messages.length" class="message_preview small_font">
+                            <p class="message_preview small_font" v-if="contacts[activeContact].messages.length">
                                 {{previewCharacters(contact.messages[lastOfArray(contact.messages)].text)}}...
                             </p>
                         </div>
-                        <div v-if="contacts[activeContact].messages.length" class="date small_font">
+                        <div class="date small_font" v-if="contacts[activeContact].messages.length">
                             {{contact.messages[lastOfArray(contact.messages)].date}}
                         </div>
                     </div>

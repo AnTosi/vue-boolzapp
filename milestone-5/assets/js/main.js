@@ -23,7 +23,7 @@ data: {
 
     cancelOpen: true,
 
-    chevron_index: `chevron + ${index}`,
+    // chevron_index: `chevron + ${index}`,
     
     contacts: [
         {

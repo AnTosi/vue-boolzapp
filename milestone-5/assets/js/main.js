@@ -4,7 +4,9 @@ var writtenMessage;
 
 // var contactsFilter;
 
-var filtered; 
+// var filtered; 
+
+var index;
 
 
 
@@ -18,6 +20,10 @@ data: {
     activeContact: 0,
 
     contactsFilter: "",
+
+    cancelOpen: true,
+
+    chevron_index: `chevron + ${index}`,
     
     contacts: [
         {
@@ -166,6 +172,23 @@ data: {
             
         },
 
+        toggleOption (){
+            if (this.classList.contains("option")){
+                console.log(this.classList);
+                this.classList.remove("option");
+            } else {
+                this.classList.add("option");
+            }
+        },
+
+        // openCancelMenu(index){
+        //     if (document.getElementById(index).classList.contains("openedCancelMenu") {
+        //         document.getElementById(index).classList.remove("openedCancelMenu")
+        //     } else
+        // }
+        // log(cancelOpen) {
+        //     console.log(this.cancelOpen);
+        // }
         // procFilter(contactsFilter, filtered){
         //     filtered = contactsFilter;
         //     console.log(filtered);

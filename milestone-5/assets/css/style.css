@@ -174,3 +174,21 @@ p.message_preview {
     height: calc(90vh - 250px);
     background-color: white;
 }
+
+i.fa-chevron-down {
+    display: none;
+}
+
+.message:hover i.fa-chevron-down {
+    display: block;
+    position: absolute;
+    color: grey;
+    top: 1rem;
+    right: 1rem;
+    background-color: inherit;
+    border-radius: 50%;
+}
+
+.cancelOption {
+    background-color: hotpink;
+}

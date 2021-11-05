@@ -189,6 +189,10 @@ i.fa-chevron-down {
     border-radius: 50%;
 }
 
-.cancelOption {
-    background-color: hotpink;
+.dropdown.show {
+    display: block;
+}
+
+.dropdown {
+    display: none;
 }

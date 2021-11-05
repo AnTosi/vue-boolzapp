@@ -110,7 +110,14 @@
             <div class="main_chat px-4 bg_pattern d-flex flex-column py-3 px-5">
                 <div class="message my-2 position-relative" v-bind:class="message.status == `received` ? `received` : `sent`" v-bind:class="{classe : message.text.length > 1}" v-for="(message, index) in contacts[activeContact].messages">
                     <p>{{message.text}}</p>
-                    <i class="fas fa-chevron-down"></i>
+                    <div class="dropdown_container">
+                        <i class="fas fa-chevron-down" @click="openCloseMenu(index)"></i>
+                        <div class="dropdown" v-bind:id="`dropdown` + index">
+                            <div>Message Info</div>
+                            <div>Delete Message</div>
+                        </div>
+
+                    </div>
                     <p class="chat_message_date">{{message.date}}</p>
                 </div>
             </div>

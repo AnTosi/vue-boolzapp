@@ -172,14 +172,23 @@ data: {
             
         },
 
-        toggleOption (){
-            if (this.classList.contains("option")){
-                console.log(this.classList);
-                this.classList.remove("option");
+        openCloseMenu (index){
+            // console.log(document.getElementById(`dropdown${index}`).classList);
+            if (document.getElementById(`dropdown${index}`).classList.contains("show")) {
+                document.getElementById(`dropdown${index}`).classList.remove("show")
             } else {
-                this.classList.add("option");
+                document.getElementById(`dropdown${index}`).classList.add("show")
             }
-        },
+        }
+
+        // toggleOption (){
+        //     if (this.classList.contains("option")){
+        //         console.log(this.classList);
+        //         this.classList.remove("option");
+        //     } else {
+        //         this.classList.add("option");
+        //     }
+        // },
 
         // openCancelMenu(index){
         //     if (document.getElementById(index).classList.contains("openedCancelMenu") {

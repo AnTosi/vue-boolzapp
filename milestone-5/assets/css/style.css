@@ -166,8 +166,9 @@ p.message_preview {
 .message {
     min-width: 100px;
     padding: 1rem 2rem 1.5rem 1rem;
-    border-radius: 1rem;
+    border-radius: 0.7rem;
     position: relative;
+    min-width: 200px;
 }
 
 .preview_container {

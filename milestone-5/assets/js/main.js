@@ -234,7 +234,7 @@ data: {
             if (!this.contacts[this.activeContact].messages.length) {
                 this.contacts[this.activeContact].messages.push({
                     date: '',
-                    text: `Avvia una conversazione con questa persona`,
+                    text: `Avvia una conversazione con ${this.contacts[this.activeContact].name}`,
                     status: 'systemMessage'
                 })
             }

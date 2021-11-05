@@ -225,3 +225,7 @@ i.fa-chevron-down {
     background-color: rgba(128, 128, 128, 0.363);
 
 }
+
+.systemMessage.message:hover i.fa-chevron-down {
+    display: none;
+}

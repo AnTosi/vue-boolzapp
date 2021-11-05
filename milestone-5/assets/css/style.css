@@ -85,14 +85,14 @@ span.bell_container {
 }
 
 .date {
-    color: grey;
+    color: rgba(128, 128, 128, 0.795);
     position: absolute;
     top: 1rem;
     right: 1rem;
 }
 
 p.message_preview {
-    color: grey;
+    color: rgba(128, 128, 128, 0.795);
 }
 
 .window_left {
@@ -158,14 +158,14 @@ p.message_preview {
 .chat_message_date {
     position: absolute;
     right: 0.5rem;
-    bottom: 0.5rem;
-    color: grey;
+    bottom: 0.3rem;
+    color: rgba(128, 128, 128, 0.795);
     font-size: 0.75rem;
 }
 
 .message {
-    min-width: 280px;
-    padding: 1rem 2rem 1.8rem 1rem;
+    min-width: 100px;
+    padding: 1rem 2rem 1.5rem 1rem;
     border-radius: 1rem;
     position: relative;
 }
